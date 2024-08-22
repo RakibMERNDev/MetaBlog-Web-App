@@ -2,7 +2,7 @@ import { format, parseISO } from "date-fns";
 import { MdDeleteOutline } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { CiEdit } from "react-icons/ci";
-import { BlogData } from "../../TypeDefination/TypeDefination";
+import { BlogData } from "../../TypeDefinition/TypeDefinition";
 import React from "react";
 import useAxiosSecure from "../../api/useAxiosSecure";
 import toast from "react-hot-toast";
@@ -21,8 +21,6 @@ const BlogTable = ({
   handleDeleteBlog,
   reload,
 }: BlogTableProps) => {
-
-
   const axiosSecure = useAxiosSecure();
   const { refetch } = useBanner();
 
@@ -48,7 +46,7 @@ const BlogTable = ({
           <th></th>
           <th>Blog Title</th>
           <th>Author</th>
-          <th>Create Date</th>
+          <th>Publish Date</th>
           <th>Status</th>
           <th>Action</th>
         </tr>
@@ -67,7 +65,17 @@ const BlogTable = ({
               <td>{blog.title}</td>
               <td>{blog.authorName}</td>
               <td>{format(parseISO(blog.published), "dd, M, yyyy")}</td>
-              <td>{blog.status}</td>
+              <td>
+                <span
+                  className={`${
+                    blog.status == "published"
+                      ? "border-green-500"
+                      : "border-red-500"
+                  } rounded-lg w-full p-2 border-2`}
+                >
+                  {blog.status}
+                </span>
+              </td>
               <td>
                 <button className="hover:bg-blue-500 p-2 hover:text-white transition-all duration-300 rounded-md">
                   <Link to={`/blogs/${blog.slug}`}>Details</Link>
@@ -75,7 +83,7 @@ const BlogTable = ({
               </td>
               <td>
                 {blog.banner ? (
-                  <>This is Banner</>
+                  <p className="text-center">Current Banner</p>
                 ) : (
                   <button
                     disabled={blog?.banner}

@@ -2,7 +2,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import CardSkeleton from "../Skeletons/CardSkeleton/CardSkeleton";
 
 import BlogCard from "../BlogCard/BlogCard";
-import { BlogData } from "../../TypeDefination/TypeDefination";
+import { BlogData } from "../../TypeDefinition/TypeDefinition";
 
 interface BlogByUserProps {
   isLoading: boolean;

@@ -4,7 +4,7 @@ import useAxiosPublic from "../api/useAxiosPublic";
 import useRecentBlogs from "../api/useRecentBlogs";
 import { useQuery } from "@tanstack/react-query";
 import useAlllBlogsPage from "./useAlllBlogsPage";
-import { BlogData } from "../TypeDefination/TypeDefination";
+import { BlogData } from "../TypeDefinition/TypeDefinition";
 
 const useAllBlogs = () => {
   //* hooks

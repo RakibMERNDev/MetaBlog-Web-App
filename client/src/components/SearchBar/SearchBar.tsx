@@ -1,6 +1,6 @@
 import { TfiSearch } from "react-icons/tfi";
 import { Link } from "react-router-dom";
-import { BlogData } from "../../TypeDefination/TypeDefination";
+import { BlogData } from "../../TypeDefinition/TypeDefinition";
 
 interface SearchBarProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;

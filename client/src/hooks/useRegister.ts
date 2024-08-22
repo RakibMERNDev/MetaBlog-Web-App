@@ -3,7 +3,7 @@ import useAuth from "./useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import useAxiosPublic from "../api/useAxiosPublic";
-import { RegisterFormData } from "../TypeDefination/TypeDefination";
+import { RegisterFormData } from "../TypeDefinition/TypeDefinition";
 
 export const useRegister = () => {
   const { registerUser, updateUserProfile, sendVerificationEmail } = useAuth();

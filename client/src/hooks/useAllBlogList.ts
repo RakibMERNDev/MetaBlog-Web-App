@@ -4,7 +4,7 @@ import useAxiosSecure from "../api/useAxiosSecure";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
-import { BlogData } from "../TypeDefination/TypeDefination";
+import { BlogData } from "../TypeDefinition/TypeDefinition";
 
 const useAllBlogList = () => {
   const axiosSecure = useAxiosSecure();
@@ -141,7 +141,7 @@ const useAllBlogList = () => {
     handleDeleteBlog,
     handleFilter,
     status,
-    refetch
+    refetch,
   };
 };
 

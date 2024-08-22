@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../api/useAxiosSecure";
 import useAdmin from "./useAdmin";
-import { AllUsersData } from "../TypeDefination/TypeDefination";
+import { AllUsersData } from "../TypeDefinition/TypeDefinition";
 
 const useGetAllUsersData = () => {
   const axiosSecure = useAxiosSecure();
