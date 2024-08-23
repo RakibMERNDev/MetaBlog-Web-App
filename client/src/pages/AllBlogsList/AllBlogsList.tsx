@@ -5,7 +5,7 @@ import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 import useAllBlogList from "../../hooks/useAllBlogList";
 import { Helmet } from "react-helmet";
 import CategorySelect from "../../components/CategorySelect/CategorySelect";
-import Pagintaion from "../../components/shared/Pagination/Pagintaion";
+import Pagination from "../../components/shared/Pagination/Pagination";
 import BlogTable from "../../components/BlogTable/BlogTable";
 
 const AllBlogsList = () => {
@@ -19,7 +19,7 @@ const AllBlogsList = () => {
     isLoading,
     handleFilter,
     status,
-    refetch
+    refetch,
   } = useAllBlogList();
 
   if (isLoading) return <LoadingSpinner />;
@@ -68,7 +68,7 @@ const AllBlogsList = () => {
           handleDeleteBlog={handleDeleteBlog}
         />
       </div>
-      <Pagintaion handlePageChange={handlePageChange} pages={totalPages} />
+      <Pagination handlePageChange={handlePageChange} pages={totalPages} />
     </section>
   );
 };

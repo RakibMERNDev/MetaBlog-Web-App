@@ -5,7 +5,7 @@ import useAllBlogs from "../../hooks/useAllBlogs";
 import BlogSlider from "../../components/BlogSlider/BlogSlider";
 import CategorySelect from "../../components/CategorySelect/CategorySelect";
 import Blogs from "../../components/Blogs/Blogs";
-import Pagintaion from "../../components/shared/Pagination/Pagintaion";
+import Pagination from "../../components/shared/Pagination/Pagination";
 
 const AllBlog: FC = (): JSX.Element => {
   const {
@@ -46,7 +46,7 @@ const AllBlog: FC = (): JSX.Element => {
         />
         <Blogs allBlogs={allBlogs} loading={loading} />
       </div>
-      <Pagintaion handlePageChange={handlePageChange} pages={totalPages} />
+      <Pagination handlePageChange={handlePageChange} pages={totalPages} />
     </Container>
   );
 };

@@ -5,6 +5,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import { BlogData } from "../TypeDefinition/TypeDefinition";
+import toast from "react-hot-toast";
 
 const useAllBlogList = () => {
   const axiosSecure = useAxiosSecure();
@@ -47,37 +48,21 @@ const useAllBlogList = () => {
 
   // ! Change the status of the blog
 
-  const handleChangeStatus = async (id: string, cstatus: string) => {
-    const status = cstatus === "published" ? "draft" : "published";
+  const handleChangeStatus = async (id: string, currentStatus: string) => {
+    const status = currentStatus === "published" ? "draft" : "published";
 
-    Swal.fire({
-      title: "Do you want to change the staus of the blog?",
-      text: `Blog status will be changed from ${cstatus} to ${status}!`,
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, Change it!",
-    }).then(async (result) => {
-      if (result.isConfirmed) {
-        try {
-          const response = await axiosSecure.patch(`/admin/blogs/${id}`, {
-            status,
-          });
+    try {
+      const response = await axiosSecure.patch(`/admin/blogs/${id}`, {
+        status,
+      });
 
-          if (response.data.success) {
-            refetch();
-            Swal.fire({
-              title: "Success!",
-              text: `${response.data.message} !!`,
-              icon: "success",
-            });
-          }
-        } catch (error) {
-          console.log(error);
-        }
+      if (response.data.success) {
+        refetch();
+        toast.success('Blog status has been changed!')
       }
-    });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   // ! Delete the blog

@@ -1,7 +1,6 @@
 import { format, parseISO } from "date-fns";
 import { MdDeleteOutline } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { CiEdit } from "react-icons/ci";
 import { BlogData } from "../../TypeDefinition/TypeDefinition";
 import React from "react";
 import useAxiosSecure from "../../api/useAxiosSecure";
@@ -56,6 +55,16 @@ const BlogTable = ({
           <React.Fragment key={blog?._id}>
             <tr>
               <td>
+                <input
+                  type="checkbox"
+                  className={`${
+                    blog.status === "published" && "toggle-success"
+                  } toggle`}
+                  defaultChecked={blog.status === "published"}
+                  onChange={()=>handleChangeStatus(blog._id, blog.status)}
+                />
+              </td>
+              <td>
                 <img
                   src={blog.photoUrl}
                   alt={blog.title}
@@ -96,16 +105,8 @@ const BlogTable = ({
               </td>
               <td>
                 <button
-                  onClick={() => handleChangeStatus(blog._id, blog.status)}
-                  className="text-2xl bg-blue-400 p-2 rounded-md hover:bg-blue-700 transition-colors duration-300 hover:text-white"
-                >
-                  <CiEdit />
-                </button>
-              </td>
-              <td>
-                <button
                   onClick={() => handleDeleteBlog(blog._id)}
-                  className="text-2xl bg-blue-400 p-2 rounded-md hover:bg-red-600 transition-colors duration-300 hover:text-white"
+                  className="text-xl p-2 rounded-md hover:bg-red-600 transition-colors duration-300 hover:text-white"
                 >
                   <MdDeleteOutline />
                 </button>
