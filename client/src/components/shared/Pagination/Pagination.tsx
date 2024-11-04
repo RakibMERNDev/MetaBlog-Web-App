@@ -3,7 +3,7 @@ type PageProps = {
   pages: number[];
 };
 
-const Pagintaion = ({ handlePageChange, pages }: PageProps) => {
+const Pagination = ({ handlePageChange, pages }: PageProps) => {
   return (
     <div className="join flex justify-center items-center mb-10 mt-auto  w-full">
       {pages.map((i) => (
@@ -19,4 +19,4 @@ const Pagintaion = ({ handlePageChange, pages }: PageProps) => {
   );
 };
 
-export default Pagintaion;
+export default Pagination;
