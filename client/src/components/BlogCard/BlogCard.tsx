@@ -6,7 +6,7 @@ import { format, parseISO } from "date-fns";
 import "aos/dist/aos.css";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import { FC } from "react";
-import { BlogData } from "../../TypeDefination/TypeDefination";
+import { BlogData } from "../../TypeDefinition/TypeDefinition";
 
 type BlogCardProps = {
   blog: BlogData;

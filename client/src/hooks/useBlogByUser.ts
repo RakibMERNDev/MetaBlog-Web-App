@@ -1,11 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../api/useAxiosSecure";
 import useAuth from "./useAuth";
-import { BlogData } from "../TypeDefination/TypeDefination";
-
+import { BlogData } from "../TypeDefinition/TypeDefinition";
 
 const useBlogByUser = () => {
-    const { user } = useAuth();
+  const { user } = useAuth();
 
   const axiosSecure = useAxiosSecure();
 
@@ -18,7 +17,6 @@ const useBlogByUser = () => {
   });
 
   return { data, isLoading };
-
 };
 
 export default useBlogByUser;

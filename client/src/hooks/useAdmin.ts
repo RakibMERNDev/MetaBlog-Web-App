@@ -1,9 +1,7 @@
-import { AdminData } from "../TypeDefination/TypeDefination";
+import { AdminData } from "../TypeDefinition/TypeDefinition";
 import useAxiosSecure from "../api/useAxiosSecure";
 import useAuth from "./useAuth";
 import { useQuery } from "@tanstack/react-query";
-
-
 
 const useAdmin = () => {
   const axiosSecure = useAxiosSecure();

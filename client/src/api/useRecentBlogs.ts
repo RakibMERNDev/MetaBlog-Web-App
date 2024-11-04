@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "./useAxiosPublic";
-import { BlogData, BlogFetchResult } from "../TypeDefination/TypeDefination";
+import { BlogData, BlogFetchResult } from "../TypeDefinition/TypeDefinition";
 
 const useRecentBlogs = (): BlogFetchResult => {
   const axiosPublic = useAxiosPublic();

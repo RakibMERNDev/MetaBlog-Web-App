@@ -3,9 +3,7 @@ import useAuth from "./useAuth";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../api/useAxiosSecure";
 import useAxiosPublic from "../api/useAxiosPublic";
-import { UserData } from "../TypeDefination/TypeDefination";
-
-
+import { UserData } from "../TypeDefinition/TypeDefinition";
 
 const useAboutUser = () => {
   const { user } = useAuth();

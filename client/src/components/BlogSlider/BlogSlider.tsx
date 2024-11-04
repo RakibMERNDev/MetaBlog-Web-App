@@ -8,7 +8,7 @@ import { format, parseISO } from "date-fns";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/autoplay";
-import { BlogData } from "../../TypeDefination/TypeDefination";
+import { BlogData } from "../../TypeDefinition/TypeDefinition";
 
 type BlogSliderProps = {
   isLoading: boolean;
